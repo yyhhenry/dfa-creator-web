@@ -16,7 +16,7 @@
     "@element-plus/icons-vue": "^2.3.1",
     "@types/markdown-it": "^13.0.7",
     "@vueuse/core": "^10.9.0",
-    "dfa-creator": "^0.2.2",
+    "dfa-creator": "^0.2.3",
     "element-plus": "^2.6.3",
     "highlight.js": "^11.9.0",
     "katex": "^0.16.10",

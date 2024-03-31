@@ -7,6 +7,8 @@ import MinDFATab from './components/MinDFATab.vue';
 import MdBox from './components/MdBox.vue';
 import { ElTabPane, ElTabs } from 'element-plus';
 import { useStorage } from '@vueuse/core';
+import ShowDFATab from './components/ShowDFATab.vue';
+import ShowNFATab from './components/ShowNFATab.vue';
 const infoMd = `
 > **特别鸣谢：编译原理宋老师**
 
@@ -40,6 +42,12 @@ const tab = useStorage('dfac-tab', '0');
         </ElTabPane>
         <ElTabPane label="MinDFA" lazy>
           <MinDFATab />
+        </ElTabPane>
+        <ElTabPane label="ShowDFA" lazy>
+          <ShowDFATab />
+        </ElTabPane>
+        <ElTabPane label="ShowNFA" lazy>
+          <ShowNFATab />
         </ElTabPane>
       </ElTabs>
     </FlexCard>
