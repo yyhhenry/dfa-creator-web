@@ -15,8 +15,8 @@ dependencies:
     specifier: ^10.9.0
     version: 10.9.0(vue@3.4.21)
   dfa-creator:
-    specifier: ^0.2.3
-    version: 0.2.3
+    specifier: ^0.2.5
+    version: 0.2.5
   element-plus:
     specifier: ^2.6.3
     version: 2.6.3(vue@3.4.21)
@@ -1495,8 +1495,8 @@ packages:
     engines: {node: '>=6'}
     dev: false
 
-  /dfa-creator@0.2.3:
-    resolution: {integrity: sha512-+fqlmMfR52auCmzcMbIvgvxbuCap2hMDlj/W9lD7rcB5tgZPabbcl9te3FqBP49iY58XHmmGzDakyqimK3sqBw==}
+  /dfa-creator@0.2.5:
+    resolution: {integrity: sha512-ALfvxIv8PzCTOE6o94a57FqYANsuZHvLJVqcj5JIwfDH8h6LwaJEwrTpW4efcV1GYlGUOqrjhbWyIxUvys3WlA==}
     dev: false
 
   /diff@5.2.0:
