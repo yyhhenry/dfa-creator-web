@@ -1,5 +1,7 @@
 import MarkdownIt from 'markdown-it';
+import KatexIt from './katex-it';
 import hljs from 'highlight.js';
+import type { KatexOptions } from 'katex';
 
 export const md = MarkdownIt({
   highlight: (str, lang) => {
@@ -18,4 +20,4 @@ export const md = MarkdownIt({
     }
     return '';
   },
-});
+}).use(KatexIt, { output: 'mathml' } satisfies KatexOptions);
