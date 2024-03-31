@@ -4,7 +4,6 @@ import { websiteName } from '@/utils/website-name';
 import Reg2NFATab from './components/Reg2NFATab.vue';
 import MdBox from './components/MdBox.vue';
 import { ElTabPane, ElTabs } from 'element-plus';
-import { ref } from 'vue';
 const infoMd = `
 > **特别鸣谢：编译原理宋老师**
 
@@ -22,17 +21,19 @@ TypeScript library [dfa-creator](https://npmjs.com/package/dfa-creator).
       <SwitchDark />
     </template>
     <FlexCard>
+      <template #header>
+        <HeaderText>Info</HeaderText>
+      </template>
+      <MdBox :content="infoMd"> </MdBox>
+    </FlexCard>
+    <FlexCard>
       <ElTabs type="border-card">
         <ElTabPane label="Reg2NFA">
           <Reg2NFATab />
         </ElTabPane>
       </ElTabs>
     </FlexCard>
-    <FlexCard>
-      <template #header>
-        <HeaderText>Info</HeaderText>
-      </template>
-      <MdBox :content="infoMd"> </MdBox>
-    </FlexCard>
+    <!-- Extra Scroll -->
+    <div style="height: 40vh"></div>
   </PageLayout>
 </template>
