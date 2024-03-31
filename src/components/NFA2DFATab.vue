@@ -10,10 +10,10 @@ import MdBox from './MdBox.vue';
 import { regExamples } from '@/utils/examples';
 
 const nfa = useStorage('dfac-n2d', '');
-const debouncedNFA = refThrottled(nfa, 500);
+const throttledNFA = refThrottled(nfa, 500);
 const safeNFA2DFA = rustError(nfa2dfa, isError);
 const dfa = computed(() => {
-  const nfa = debouncedNFA.value;
+  const nfa = throttledNFA.value;
   return nfa === '' ? Ok(['', '']) : safeNFA2DFA(nfa);
 });
 </script>

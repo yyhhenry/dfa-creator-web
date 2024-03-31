@@ -10,10 +10,10 @@ import { regExamples } from '@/utils/examples';
 import MdBox from './MdBox.vue';
 
 const regex = useStorage('dfac-r2n', '');
-const debouncedRegex = refThrottled(regex, 500);
+const throttledRegex = refThrottled(regex, 500);
 const safeReg2nfa = rustError(reg2nfa, isError);
 const nfa = computed(() => {
-  const reg = debouncedRegex.value;
+  const reg = throttledRegex.value;
   return reg === '' ? Ok('') : safeReg2nfa(reg);
 });
 const safeShowNfa = rustError(nfa2mermaid, isError);

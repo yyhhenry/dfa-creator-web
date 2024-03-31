@@ -10,10 +10,10 @@ import MdBox from './MdBox.vue';
 import { regExamples } from '@/utils/examples';
 
 const dfa = useStorage('dfac-min', '');
-const debouncedDFA = refThrottled(dfa, 500);
+const throttledDFA = refThrottled(dfa, 500);
 const safeMinDfa = rustError(minimize_dfa, isError);
 const minDfa = computed(() => {
-  const dfa = debouncedDFA.value;
+  const dfa = throttledDFA.value;
   return dfa === '' ? Ok(['', '']) : safeMinDfa(dfa);
 });
 </script>
