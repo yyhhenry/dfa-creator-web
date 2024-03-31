@@ -18,7 +18,7 @@ const dfa = computed(() => {
 });
 </script>
 <template>
-  <ElInput v-model="nfa" placeholder="Enter NFA JSON" type="textarea" />
+  <ElInput v-model="nfa" placeholder="Enter NFA JSON" type="textarea" autosize />
   <FlexBox>
     <HeaderText>
       <span :style="{ marginRight: '20px' }">Examples</span>

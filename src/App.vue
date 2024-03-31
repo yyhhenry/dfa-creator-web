@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { PageLayout, FlexCard, SwitchDark, HeaderText } from 'luoluo-vue-components';
+import { PageLayout, FlexCard, FlexBox, SwitchDark, HeaderText } from 'luoluo-vue-components';
 import { websiteName } from '@/utils/website-name';
 import Reg2NFATab from './components/Reg2NFATab.vue';
 import NFA2DFATab from './components/NFA2DFATab.vue';
@@ -12,11 +12,13 @@ import ShowNFATab from './components/ShowNFATab.vue';
 const infoMd = `
 > **特别鸣谢：编译原理宋老师**
 
-Rust source [dfa-creator](https://github.com/yyhhenry/dfa-creator).
+Web tool to create and minimize DFA/NFA.
 
-Rust release [dfac](https://github.com/yyhhenry/dfa-creator/releases/latest).
+Rust library [dfa-creator](https://github.com/yyhhenry/dfa-creator) (Binary release [dfac](https://github.com/yyhhenry/dfa-creator/releases/latest)).
 
 TypeScript library [dfa-creator](https://npmjs.com/package/dfa-creator).
+
+Web demo [DFA Creator](https://dfac.pages.dev/) (Source [dfa-creator-web](https://github.com/yyhhenry/dfa-creator-web)).
 `.trimStart();
 const tab = useStorage('dfac-tab', '0');
 </script>
@@ -32,7 +34,7 @@ const tab = useStorage('dfac-tab', '0');
       </template>
       <MdBox :content="infoMd"> </MdBox>
     </FlexCard>
-    <FlexCard>
+    <FlexBox>
       <ElTabs type="border-card" v-model="tab">
         <ElTabPane label="Reg2NFA" lazy>
           <Reg2NFATab />
@@ -50,7 +52,7 @@ const tab = useStorage('dfac-tab', '0');
           <ShowNFATab />
         </ElTabPane>
       </ElTabs>
-    </FlexCard>
+    </FlexBox>
     <!-- Extra Scroll -->
     <div style="height: 40vh"></div>
   </PageLayout>
