@@ -1,6 +1,6 @@
 # dfa-creator-web
 
-Tool for creating NFA and DFA.
+A Web Tool to create and minimize DFA/NFA.
 
 Rust source [dfa-creator](https://github.com/yyhhenry/dfa-creator).
 
