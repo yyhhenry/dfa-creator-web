@@ -37,7 +37,7 @@ const testResult = computed(() => {
       placeholder="Enter string to test"
       :prefix-icon="testResult.ok && testResult.v ? Select : Close"
       :style="{ fontSize: '2em' }"
-      :input-style="{ fontSize: '0.7em' }"
+      :input-style="{ fontSize: '0.5em' }"
     >
     </ElInput>
   </FlexBox>
