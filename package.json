@@ -2,7 +2,7 @@
   "name": "dfa-creator-web",
   "version": "0.1.0",
   "license": "MIT",
-  "description": "A Web Tool to create and minimize DFA/NFA.",
+  "description": "Web tool to create and minimize DFA/NFA.",
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -17,7 +17,7 @@
     "@element-plus/icons-vue": "^2.3.1",
     "@types/markdown-it": "^13.0.7",
     "@vueuse/core": "^10.9.0",
-    "dfa-creator": "^0.2.3",
+    "dfa-creator": "^0.2.5",
     "element-plus": "^2.6.3",
     "highlight.js": "^11.9.0",
     "katex": "^0.16.10",

@@ -28,7 +28,7 @@ const testResult = computed(() => {
 </script>
 <template>
   <FlexBox>
-    <ElInput v-model="nfa" placeholder="Enter NFA JSON" type="textarea" />
+    <ElInput v-model="nfa" placeholder="Enter NFA JSON" type="textarea" autosize />
   </FlexBox>
   <FlexBox>
     <ElInput
