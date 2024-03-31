@@ -23,7 +23,6 @@
     "luoluo-rust-error": "^0.0.6",
     "luoluo-vue-components": "^2.0.1",
     "markdown-it": "^14.1.0",
-    "markdown-it-katex": "^2.0.3",
     "mermaid": "^10.9.0",
     "uuid": "^9.0.1",
     "vue": "^3.4.21"
