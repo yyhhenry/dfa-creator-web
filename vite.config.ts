@@ -12,4 +12,17 @@ export default defineConfig({
       '@': fileURLToPath(new URL('./src', import.meta.url)),
     },
   },
+  build: {
+    target: 'esnext',
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          katex: ['katex'],
+          mermaid: ['mermaid'],
+          MarkdownIt: ['markdown-it'],
+          ElementPlus: ['element-plus'],
+        },
+      },
+    },
+  },
 });
