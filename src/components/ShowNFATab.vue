@@ -5,7 +5,7 @@ import { ElButton, ElInput } from 'element-plus';
 import { refThrottled, useStorage } from '@vueuse/core';
 import { rustError, Ok } from 'luoluo-rust-error';
 import { isError } from '@/utils/types';
-import { FlexBox, HeaderText } from 'luoluo-vue-components';
+import { FlexBox, HeaderText } from '@yyhhenry/element-extra';
 import MdBox from './MdBox.vue';
 import { regExamples } from '@/utils/examples';
 import { Select, Close } from '@element-plus/icons-vue';

@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { PageLayout, FlexCard, FlexBox, SwitchDark, HeaderText } from 'luoluo-vue-components';
+import { PageLayout, FlexCard, FlexBox, SwitchDark, HeaderText } from '@yyhhenry/element-extra';
 import { websiteName } from '@/utils/website-name';
 import Reg2NFATab from './components/Reg2NFATab.vue';
 import NFA2DFATab from './components/NFA2DFATab.vue';

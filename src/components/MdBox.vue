@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { FlexBox, HeaderText } from 'luoluo-vue-components';
+import { FlexBox, HeaderText } from '@yyhhenry/element-extra';
 import { md } from '@/utils/md';
 import mermaid from 'mermaid';
 import { computed, onMounted, onUpdated } from 'vue';

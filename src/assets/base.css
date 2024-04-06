@@ -1,6 +1,6 @@
 @import '/node_modules/element-plus/theme-chalk/index.css';
 @import '/node_modules/element-plus/theme-chalk/dark/css-vars.css';
-@import '/node_modules/luoluo-vue-components/dist/style.css';
+@import '/node_modules/@yyhhenry/element-extra/dist/style.css';
 @import '/node_modules/highlight.js/styles/atom-one-dark-reasonable.min.css';
 
 *,

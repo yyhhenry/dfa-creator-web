@@ -14,6 +14,9 @@ dependencies:
   '@vueuse/core':
     specifier: ^10.9.0
     version: 10.9.0(vue@3.4.21)
+  '@yyhhenry/element-extra':
+    specifier: ^0.2.0
+    version: 0.2.0(@element-plus/icons-vue@2.3.1)(@vueuse/core@10.9.0)(element-plus@2.6.3)(vue@3.4.21)
   dfa-creator:
     specifier: ^0.2.5
     version: 0.2.5
@@ -29,9 +32,6 @@ dependencies:
   luoluo-rust-error:
     specifier: ^0.0.6
     version: 0.0.6
-  luoluo-vue-components:
-    specifier: ^2.0.1
-    version: 2.0.1(@element-plus/icons-vue@2.3.1)(@vueuse/core@10.9.0)(element-plus@2.6.3)(vue@3.4.21)
   markdown-it:
     specifier: ^14.1.0
     version: 14.1.0
@@ -1008,6 +1008,20 @@ packages:
     transitivePeerDependencies:
       - '@vue/composition-api'
       - vue
+    dev: false
+
+  /@yyhhenry/element-extra@0.2.0(@element-plus/icons-vue@2.3.1)(@vueuse/core@10.9.0)(element-plus@2.6.3)(vue@3.4.21):
+    resolution: {integrity: sha512-Ph5WwZ0rEVyGKVlKm5Y/d8R3cAEyQTMJzTBhM2y+++hmgrTapndIpS868/ajiFS+WqzJpynXoLke1cUQnbO7vw==}
+    peerDependencies:
+      '@element-plus/icons-vue': ^2.3.1
+      '@vueuse/core': ^10.9.0
+      element-plus: ^2.6.3
+      vue: ^3.4.21
+    dependencies:
+      '@element-plus/icons-vue': 2.3.1(vue@3.4.21)
+      '@vueuse/core': 10.9.0(vue@3.4.21)
+      element-plus: 2.6.3(vue@3.4.21)
+      vue: 3.4.21(typescript@5.3.3)
     dev: false
 
   /acorn-jsx@5.3.2(acorn@8.11.3):
@@ -2061,20 +2075,6 @@ packages:
 
   /luoluo-rust-error@0.0.6:
     resolution: {integrity: sha512-0wX5IGop/h2+W8xB4pKHktcEmA7phZib6ru4TnTt298gh/nNKnhZGLys0UnXFmNl5vd+DABfn0AdMCZyueDrRw==}
-    dev: false
-
-  /luoluo-vue-components@2.0.1(@element-plus/icons-vue@2.3.1)(@vueuse/core@10.9.0)(element-plus@2.6.3)(vue@3.4.21):
-    resolution: {integrity: sha512-aYbxPYgjXBJz6FzHPXWJ/yPnP7iDuxLCOm5qCL4b9j5ilxeS1Z8MFZ8jL61XJdgkBIft5tTh+B+o6I24JpgQlA==}
-    peerDependencies:
-      '@element-plus/icons-vue': ^2.3.1
-      '@vueuse/core': ^10.9.0
-      element-plus: ^2.6.3
-      vue: ^3.4.21
-    dependencies:
-      '@element-plus/icons-vue': 2.3.1(vue@3.4.21)
-      '@vueuse/core': 10.9.0(vue@3.4.21)
-      element-plus: 2.6.3(vue@3.4.21)
-      vue: 3.4.21(typescript@5.3.3)
     dev: false
 
   /magic-string@0.30.8:
