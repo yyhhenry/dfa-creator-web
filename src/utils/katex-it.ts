@@ -12,14 +12,15 @@ const KatexIt: MarkdownIt.PluginWithOptions<KatexOptions> = (md, userOptions) =>
     }
     const nextChar = state.src.slice(state.pos + 1, state.pos + 2);
     const mark = nextChar === '$' ? '$$' : '$';
-    for (let pos = state.pos + 1; pos < state.posMax; pos++) {
-      if (state.src.slice(pos, pos + mark.length) === mark) {
-        const content = state.src.slice(state.pos + 1, pos);
+    const d = mark.length;
+    for (let pos = state.pos + d; pos < state.posMax; pos++) {
+      if (state.src.slice(pos, pos + d) === mark) {
+        const content = state.src.slice(state.pos + d, pos);
         const type = mark === '$$' ? 'math_block' : 'math_inline';
         const token = state.push(type, 'math', 0);
         token.markup = mark;
         token.content = content.trim();
-        state.pos = pos + 1;
+        state.pos = pos + d;
         return true;
       } else if (state.src[pos] === '\n') {
         return false;
