@@ -18,8 +18,8 @@ importers:
         specifier: ^10.9.0
         version: 10.9.0(vue@3.4.21(typescript@5.3.3))
       '@yyhhenry/element-extra':
-        specifier: ~0.2.1
-        version: 0.2.1(@element-plus/icons-vue@2.3.1(vue@3.4.21(typescript@5.3.3)))(@vueuse/core@10.9.0(vue@3.4.21(typescript@5.3.3)))(element-plus@2.6.3(vue@3.4.21(typescript@5.3.3)))(vue@3.4.21(typescript@5.3.3))
+        specifier: ~0.3.0
+        version: 0.3.0(@element-plus/icons-vue@2.3.1(vue@3.4.21(typescript@5.3.3)))(@vueuse/core@10.9.0(vue@3.4.21(typescript@5.3.3)))(element-plus@2.6.3(vue@3.4.21(typescript@5.3.3)))(vue@3.4.21(typescript@5.3.3))
       dfa-creator:
         specifier: ~0.3.1
         version: 0.3.1
@@ -620,8 +620,8 @@ packages:
   '@vueuse/shared@9.13.0':
     resolution: {integrity: sha512-UrnhU+Cnufu4S6JLCPZnkWh0WwZGUp72ktOF2DFptMlOs3TOdVv8xJN53zhHGARmVOsz5KqOls09+J1NR6sBKw==}
 
-  '@yyhhenry/element-extra@0.2.1':
-    resolution: {integrity: sha512-9ZwwLOz5kS7STZ8yWa5VCcEC11PC8sd8d7381/bmOHfVe5M8D8Ka8Js2hTcbthhYV/vKFsusz7ysdWy57Gw6Gw==}
+  '@yyhhenry/element-extra@0.3.0':
+    resolution: {integrity: sha512-6vpYOjPvp12SW5g4DLqh3O5OE6YM3l+wSBvCn7kL5DPidIlFWx98qcfSAcmsPz4LoV43kMHFujZxy5fM6MmEcQ==}
     peerDependencies:
       '@element-plus/icons-vue': ^2.3.1
       '@vueuse/core': ^10.9.0
@@ -2156,7 +2156,7 @@ snapshots:
       - '@vue/composition-api'
       - vue
 
-  '@yyhhenry/element-extra@0.2.1(@element-plus/icons-vue@2.3.1(vue@3.4.21(typescript@5.3.3)))(@vueuse/core@10.9.0(vue@3.4.21(typescript@5.3.3)))(element-plus@2.6.3(vue@3.4.21(typescript@5.3.3)))(vue@3.4.21(typescript@5.3.3))':
+  '@yyhhenry/element-extra@0.3.0(@element-plus/icons-vue@2.3.1(vue@3.4.21(typescript@5.3.3)))(@vueuse/core@10.9.0(vue@3.4.21(typescript@5.3.3)))(element-plus@2.6.3(vue@3.4.21(typescript@5.3.3)))(vue@3.4.21(typescript@5.3.3))':
     dependencies:
       '@element-plus/icons-vue': 2.3.1(vue@3.4.21(typescript@5.3.3))
       '@vueuse/core': 10.9.0(vue@3.4.21(typescript@5.3.3))
