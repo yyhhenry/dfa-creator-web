@@ -1,14 +1,14 @@
 <script setup lang="ts">
 import { PageLayout, FlexCard, FlexBox, SwitchDark, HeaderText } from '@yyhhenry/element-extra';
 import { websiteName } from '@/utils/website-name';
-import Reg2NFATab from './components/Reg2NFATab.vue';
-import NFA2DFATab from './components/NFA2DFATab.vue';
-import MinDFATab from './components/MinDFATab.vue';
+import RegexToNfaTab from './components/RegexToNfaTab.vue';
+import NfaToDfaTab from './components/NfaToDfaTab.vue';
+import MinDfaTab from './components/MinDfaTab.vue';
 import MdBox from './components/MdBox.vue';
 import { ElTabPane, ElTabs } from 'element-plus';
 import { useStorage } from '@vueuse/core';
-import ShowDFATab from './components/ShowDFATab.vue';
-import ShowNFATab from './components/ShowNFATab.vue';
+import ShowDfaTab from './components/ShowDfaTab.vue';
+import ShowNfaTab from './components/ShowNfaTab.vue';
 const infoMd = `
 > **特别鸣谢：编译原理宋老师**
 
@@ -36,20 +36,20 @@ const tab = useStorage('dfac-tab', '0');
     </FlexCard>
     <FlexBox>
       <ElTabs type="border-card" v-model="tab">
-        <ElTabPane label="Reg2NFA" lazy>
-          <Reg2NFATab />
+        <ElTabPane label="Regex -> NFA" lazy>
+          <RegexToNfaTab />
         </ElTabPane>
-        <ElTabPane label="NFA2DFA" lazy>
-          <NFA2DFATab />
+        <ElTabPane label="NFA -> DFA" lazy>
+          <NfaToDfaTab />
         </ElTabPane>
-        <ElTabPane label="MinDFA" lazy>
-          <MinDFATab />
+        <ElTabPane label="Minimize DFA" lazy>
+          <MinDfaTab />
         </ElTabPane>
-        <ElTabPane label="ShowDFA" lazy>
-          <ShowDFATab />
+        <ElTabPane label="Show DFA" lazy>
+          <ShowDfaTab />
         </ElTabPane>
-        <ElTabPane label="ShowNFA" lazy>
-          <ShowNFATab />
+        <ElTabPane label="Show NFA" lazy>
+          <ShowNfaTab />
         </ElTabPane>
       </ElTabs>
     </FlexBox>
