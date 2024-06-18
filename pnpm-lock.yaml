@@ -21,8 +21,8 @@ importers:
         specifier: ~0.3.0
         version: 0.3.0(@element-plus/icons-vue@2.3.1(vue@3.4.21(typescript@5.3.3)))(@vueuse/core@10.9.0(vue@3.4.21(typescript@5.3.3)))(element-plus@2.6.3(vue@3.4.21(typescript@5.3.3)))(vue@3.4.21(typescript@5.3.3))
       dfa-creator:
-        specifier: ~0.3.1
-        version: 0.3.1
+        specifier: ~0.4.0
+        version: 0.4.0
       element-plus:
         specifier: ^2.6.3
         version: 2.6.3(vue@3.4.21(typescript@5.3.3))
@@ -905,8 +905,8 @@ packages:
     resolution: {integrity: sha512-0je+qPKHEMohvfRTCEo3CrPG6cAzAYgmzKyxRiYSSDkS6eGJdyVJm7WaYA5ECaAD9wLB2T4EEeymA5aFVcYXCA==}
     engines: {node: '>=6'}
 
-  dfa-creator@0.3.1:
-    resolution: {integrity: sha512-JGP6ofpGPAnWn9OBjX50nVdgsK2DKiQPtfUG0dBY/dKq6J/DVkOeS313bVGoudQSk15XCRkfqiW+mpEhrrJpKA==}
+  dfa-creator@0.4.0:
+    resolution: {integrity: sha512-ApWQXrDFb56GLGgToZBLHuzxxfDe3P6UphWlVqFm6CijH6QWtKHE9mZFGxd4KSP9AcNVCoHNfHCOiRgPFFgR7A==}
 
   diff@5.2.0:
     resolution: {integrity: sha512-uIFDxqpRZGZ6ThOk84hEfqWoHx2devRFvpTZcTHur85vImfaxUbTW9Ryh4CpCuDnToOP1CEtXKIgytHBPVff5A==}
@@ -2446,7 +2446,7 @@ snapshots:
 
   dequal@2.0.3: {}
 
-  dfa-creator@0.3.1: {}
+  dfa-creator@0.4.0: {}
 
   diff@5.2.0: {}
 

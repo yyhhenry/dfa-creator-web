@@ -9,6 +9,8 @@ import MdGroup from './MdGroup.vue';
 import ExamplesBox from './ExamplesBox.vue';
 import { dfaToMermaid, regexToMinDfa, testDfa } from 'dfa-creator';
 import { safeDfaFromJson } from '@/utils/safe-dfac';
+import { escapeStr } from '@/utils/escape';
+import { Result } from 'neverthrow';
 
 const dfaInput = useStorage('dfac-show-dfa', '');
 const strInput = useStorage('dfac-show-dfa-str', '');
@@ -21,13 +23,15 @@ const view = computed(() => {
   if (dfaJson.value === '') {
     return {};
   }
-  return safeDfaFromJson(dfaJson.value).match<TestViewMap>(
-    (dfa) => ({
+  const escaped = escapeStr(str.value);
+  const dfa = safeDfaFromJson(dfaJson.value);
+  return Result.combine([escaped, dfa]).match<TestViewMap>(
+    ([str, dfa]) => ({
       mermaid: {
         title: 'DFA',
         content: dfaToMermaid(dfa),
       },
-      accepted: testDfa(dfa, str.value),
+      accepted: testDfa(dfa, str),
     }),
     (e) => ({ err: e.message }),
   );
