@@ -10,7 +10,6 @@ import ExamplesBox from './ExamplesBox.vue';
 import { dfaToMermaid, regexToMinDfa, testDfa } from 'dfa-creator';
 import { safeDfaFromJson } from '@/utils/safe-dfac';
 import { escapeStr } from '@/utils/escape';
-import { Result } from 'neverthrow';
 
 const dfaInput = useStorage('dfac-show-dfa', '');
 const strInput = useStorage('dfac-show-dfa-str', '');
@@ -24,22 +23,31 @@ const view = computed(() => {
     return {};
   }
   const escaped = escapeStr(str.value);
+  if (escaped.isErr()) {
+    return { err: escaped.error.message };
+  }
   const dfa = safeDfaFromJson(dfaJson.value);
-  return Result.combine([escaped, dfa]).match<TestViewMap>(
-    ([str, dfa]) => ({
-      mermaid: {
-        title: 'DFA',
-        content: dfaToMermaid(dfa),
-      },
-      accepted: testDfa(dfa, str),
-    }),
-    (e) => ({ err: e.message }),
-  );
+  if (dfa.isErr()) {
+    return { err: dfa.error.message };
+  }
+  const dfaV = dfa.unwrap();
+  return {
+    mermaid: {
+      title: 'DFA',
+      content: dfaToMermaid(dfaV),
+    },
+    accepted: testDfa(dfaV, escaped.unwrap()),
+  } satisfies TestViewMap;
 });
 </script>
 <template>
   <FlexBox>
-    <ElInput v-model="dfaInput" placeholder="Enter DFA JSON" type="textarea" autosize />
+    <ElInput
+      v-model="dfaInput"
+      placeholder="Enter DFA JSON"
+      type="textarea"
+      autosize
+    />
   </FlexBox>
   <FlexBox>
     <ElInput

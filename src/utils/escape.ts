@@ -1,4 +1,4 @@
-import { Result, err, ok } from 'neverthrow';
+import { type Result, err, ok } from '@yyhhenry/rust-result';
 export function escapeStr(s: string): Result<string, Error> {
   const chars = [...s];
   let pos = 0;

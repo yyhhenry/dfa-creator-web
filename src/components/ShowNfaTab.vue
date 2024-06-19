@@ -9,7 +9,6 @@ import ExamplesBox from './ExamplesBox.vue';
 import MdGroup from './MdGroup.vue';
 import type { TestViewMap } from '@/utils/types';
 import { nfaToMermaid, regexToNfa, testNfa } from 'dfa-creator';
-import { Result } from 'neverthrow';
 import { escapeStr } from '@/utils/escape';
 
 const nfaInput = useStorage('dfac-show-nfa', '');
@@ -24,22 +23,31 @@ const view = computed(() => {
     return {};
   }
   const escaped = escapeStr(str.value);
+  if (escaped.isErr()) {
+    return { err: escaped.error.message };
+  }
   const nfa = safeNfaFromJson(nfaJson.value);
-  return Result.combine([escaped, nfa]).match<TestViewMap>(
-    ([str, nfa]) => ({
-      mermaid: {
-        title: 'NFA',
-        content: nfaToMermaid(nfa),
-      },
-      accepted: testNfa(nfa, str),
-    }),
-    (e) => ({ err: e.message }),
-  );
+  if (nfa.isErr()) {
+    return { err: nfa.error.message };
+  }
+  const nfaV = nfa.unwrap();
+  return {
+    mermaid: {
+      title: 'NFA',
+      content: nfaToMermaid(nfaV),
+    },
+    accepted: testNfa(nfaV, escaped.unwrap()),
+  } satisfies TestViewMap;
 });
 </script>
 <template>
   <FlexBox>
-    <ElInput v-model="nfaInput" placeholder="Enter NFA JSON" type="textarea" autosize />
+    <ElInput
+      v-model="nfaInput"
+      placeholder="Enter NFA JSON"
+      type="textarea"
+      autosize
+    />
   </FlexBox>
   <FlexBox>
     <ElInput
