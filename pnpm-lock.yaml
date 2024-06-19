@@ -20,6 +20,9 @@ importers:
       '@yyhhenry/element-extra':
         specifier: ~0.3.0
         version: 0.3.0(@element-plus/icons-vue@2.3.1(vue@3.4.29(typescript@5.3.3)))(@vueuse/core@10.11.0(vue@3.4.29(typescript@5.3.3)))(element-plus@2.7.5(vue@3.4.29(typescript@5.3.3)))(vue@3.4.29(typescript@5.3.3))
+      '@yyhhenry/rust-result':
+        specifier: npm:@jsr/yyhhenry__rust-result@^0.2.4
+        version: '@jsr/yyhhenry__rust-result@0.2.4'
       dfa-creator:
         specifier: ~0.4.1
         version: 0.4.1
@@ -38,9 +41,6 @@ importers:
       mermaid:
         specifier: ^10.9.1
         version: 10.9.1
-      neverthrow:
-        specifier: ^6.2.2
-        version: 6.2.2
       uuid:
         specifier: ^9.0.1
         version: 9.0.1
@@ -308,6 +308,9 @@ packages:
 
   '@jridgewell/sourcemap-codec@1.4.15':
     resolution: {integrity: sha512-eF2rxCRulEKXHTRiDrDy6erMYWqNw4LPdQ8UQA4huuxaQsVeRPFl2oM8oDGxMFhJUWZf9McpLtJasDDZb/Bpeg==}
+
+  '@jsr/yyhhenry__rust-result@0.2.4':
+    resolution: {integrity: sha512-q8d1cFQBlPukkbmJIaDp0ShGD1jE63u67j6NI2rhvxfX9gBg3tHib3XWvWmkA5JJbCBJa4dTTXIu/nou1oyehw==, tarball: https://npm.jsr.io/~/11/@jsr/yyhhenry__rust-result/0.2.4.tgz}
 
   '@nodelib/fs.scandir@2.1.5':
     resolution: {integrity: sha512-vq24Bq3ym5HEQm2NKCr3yXDwjc7vTsEThRDnkp2DK9p1uqLR+DHurm/NOTo0KG7HYHU7eppKZj3MyqYuMBf62g==}
@@ -1329,9 +1332,6 @@ packages:
   natural-compare@1.4.0:
     resolution: {integrity: sha512-OWND8ei3VtNC9h7V60qff3SVobHr996CTwgxubgyQYEpg290h9J0buyECNNJexkFm5sOajh5G116RYA1c8ZMSw==}
 
-  neverthrow@6.2.2:
-    resolution: {integrity: sha512-POR1FACqdK9jH0S2kRPzaZEvzT11wsOxLW520PQV/+vKi9dQe+hXq19EiOvYx7lSRaF5VB9lYGsPInynrnN05w==}
-
   non-layered-tidy-tree-layout@2.0.2:
     resolution: {integrity: sha512-gkXMxRzUH+PB0ax9dUN0yYF0S25BqeAYqhgMaLUFmpXLEk7Fcu8f4emJuOAY0V8kjDICxROIKsTAKsV/v355xw==}
 
@@ -1807,6 +1807,8 @@ snapshots:
   '@humanwhocodes/object-schema@2.0.3': {}
 
   '@jridgewell/sourcemap-codec@1.4.15': {}
+
+  '@jsr/yyhhenry__rust-result@0.2.4': {}
 
   '@nodelib/fs.scandir@2.1.5':
     dependencies:
@@ -3011,8 +3013,6 @@ snapshots:
   nanoid@3.3.7: {}
 
   natural-compare@1.4.0: {}
-
-  neverthrow@6.2.2: {}
 
   non-layered-tidy-tree-layout@2.0.2: {}
 

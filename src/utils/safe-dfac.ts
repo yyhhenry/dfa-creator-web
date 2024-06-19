@@ -1,6 +1,8 @@
 import { nfaFromJson, dfaFromJson, regexToNfa } from 'dfa-creator';
-import { toError } from './types';
-import { fromThrowable } from 'neverthrow';
-export const safeNfaFromJson = fromThrowable(nfaFromJson, toError);
-export const safeDfaFromJson = fromThrowable(dfaFromJson, toError);
-export const safeRegexToNfa = fromThrowable(regexToNfa, toError);
+import { safely } from '@yyhhenry/rust-result';
+export const safeNfaFromJson = (json: string) =>
+  safely(() => nfaFromJson(json));
+export const safeDfaFromJson = (json: string) =>
+  safely(() => dfaFromJson(json));
+export const safeRegexToNfa = (regex: string) =>
+  safely(() => regexToNfa(regex));
