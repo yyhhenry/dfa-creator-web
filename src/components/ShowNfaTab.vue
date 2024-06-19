@@ -24,11 +24,11 @@ const view = computed(() => {
   }
   const escaped = escapeStr(str.value);
   if (escaped.isErr()) {
-    return { err: escaped.error.message };
+    return { err: escaped.unwrapErr().message };
   }
   const nfa = safeNfaFromJson(nfaJson.value);
   if (nfa.isErr()) {
-    return { err: nfa.error.message };
+    return { err: nfa.unwrapErr().message };
   }
   const nfaV = nfa.unwrap();
   return {

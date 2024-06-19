@@ -21,8 +21,8 @@ importers:
         specifier: ~0.3.0
         version: 0.3.0(@element-plus/icons-vue@2.3.1(vue@3.4.29(typescript@5.3.3)))(@vueuse/core@10.11.0(vue@3.4.29(typescript@5.3.3)))(element-plus@2.7.5(vue@3.4.29(typescript@5.3.3)))(vue@3.4.29(typescript@5.3.3))
       '@yyhhenry/rust-result':
-        specifier: npm:@jsr/yyhhenry__rust-result@^0.2.3
-        version: '@jsr/yyhhenry__rust-result@0.2.3'
+        specifier: npm:@jsr/yyhhenry__rust-result@^0.2.4
+        version: '@jsr/yyhhenry__rust-result@0.2.4'
       dfa-creator:
         specifier: ~0.4.1
         version: 0.4.1
@@ -309,8 +309,8 @@ packages:
   '@jridgewell/sourcemap-codec@1.4.15':
     resolution: {integrity: sha512-eF2rxCRulEKXHTRiDrDy6erMYWqNw4LPdQ8UQA4huuxaQsVeRPFl2oM8oDGxMFhJUWZf9McpLtJasDDZb/Bpeg==}
 
-  '@jsr/yyhhenry__rust-result@0.2.3':
-    resolution: {integrity: sha512-lKazPqxsMxnSfwNGYhat8aSUoKRSwiQU6K0Tt35y9y5FB+7hrs00pgxND0IN1FPcCEN0kTnNyAQvDP5cj4PoXA==, tarball: https://npm.jsr.io/~/11/@jsr/yyhhenry__rust-result/0.2.3.tgz}
+  '@jsr/yyhhenry__rust-result@0.2.4':
+    resolution: {integrity: sha512-q8d1cFQBlPukkbmJIaDp0ShGD1jE63u67j6NI2rhvxfX9gBg3tHib3XWvWmkA5JJbCBJa4dTTXIu/nou1oyehw==, tarball: https://npm.jsr.io/~/11/@jsr/yyhhenry__rust-result/0.2.4.tgz}
 
   '@nodelib/fs.scandir@2.1.5':
     resolution: {integrity: sha512-vq24Bq3ym5HEQm2NKCr3yXDwjc7vTsEThRDnkp2DK9p1uqLR+DHurm/NOTo0KG7HYHU7eppKZj3MyqYuMBf62g==}
@@ -1808,7 +1808,7 @@ snapshots:
 
   '@jridgewell/sourcemap-codec@1.4.15': {}
 
-  '@jsr/yyhhenry__rust-result@0.2.3': {}
+  '@jsr/yyhhenry__rust-result@0.2.4': {}
 
   '@nodelib/fs.scandir@2.1.5':
     dependencies:
