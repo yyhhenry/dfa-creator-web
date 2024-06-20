@@ -18,7 +18,7 @@
     "@types/markdown-it": "^13.0.8",
     "@vueuse/core": "^10.11.0",
     "@yyhhenry/element-extra": "~0.3.0",
-    "@yyhhenry/rust-result": "npm:@jsr/yyhhenry__rust-result@^0.2.4",
+    "@yyhhenry/rust-result": "npm:@jsr/yyhhenry__rust-result@^0.2.8",
     "dfa-creator": "~0.4.1",
     "element-plus": "^2.7.5",
     "highlight.js": "^11.9.0",
@@ -31,7 +31,7 @@
   "devDependencies": {
     "@tsconfig/node20": "^20.1.4",
     "@types/katex": "^0.16.7",
-    "@types/node": "^20.14.5",
+    "@types/node": "^20.14.6",
     "@types/uuid": "^9.0.8",
     "@vitejs/plugin-vue": "^5.0.5",
     "@vue/eslint-config-prettier": "^8.0.0",
