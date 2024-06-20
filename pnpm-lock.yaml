@@ -21,8 +21,8 @@ importers:
         specifier: ~0.3.0
         version: 0.3.0(@element-plus/icons-vue@2.3.1(vue@3.4.29(typescript@5.3.3)))(@vueuse/core@10.11.0(vue@3.4.29(typescript@5.3.3)))(element-plus@2.7.5(vue@3.4.29(typescript@5.3.3)))(vue@3.4.29(typescript@5.3.3))
       '@yyhhenry/rust-result':
-        specifier: npm:@jsr/yyhhenry__rust-result@^0.2.4
-        version: '@jsr/yyhhenry__rust-result@0.2.4'
+        specifier: npm:@jsr/yyhhenry__rust-result@^0.2.8
+        version: '@jsr/yyhhenry__rust-result@0.2.8'
       dfa-creator:
         specifier: ~0.4.1
         version: 0.4.1
@@ -55,14 +55,14 @@ importers:
         specifier: ^0.16.7
         version: 0.16.7
       '@types/node':
-        specifier: ^20.14.5
-        version: 20.14.5
+        specifier: ^20.14.6
+        version: 20.14.6
       '@types/uuid':
         specifier: ^9.0.8
         version: 9.0.8
       '@vitejs/plugin-vue':
         specifier: ^5.0.5
-        version: 5.0.5(vite@5.3.1(@types/node@20.14.5))(vue@3.4.29(typescript@5.3.3))
+        version: 5.0.5(vite@5.3.1(@types/node@20.14.6))(vue@3.4.29(typescript@5.3.3))
       '@vue/eslint-config-prettier':
         specifier: ^8.0.0
         version: 8.0.0(eslint@8.57.0)(prettier@3.3.2)
@@ -89,10 +89,10 @@ importers:
         version: 5.3.3
       vite:
         specifier: ^5.3.1
-        version: 5.3.1(@types/node@20.14.5)
+        version: 5.3.1(@types/node@20.14.6)
       vite-plugin-wasm:
         specifier: ^3.3.0
-        version: 3.3.0(vite@5.3.1(@types/node@20.14.5))
+        version: 3.3.0(vite@5.3.1(@types/node@20.14.6))
       vue-tsc:
         specifier: ^2.0.21
         version: 2.0.21(typescript@5.3.3)
@@ -309,8 +309,8 @@ packages:
   '@jridgewell/sourcemap-codec@1.4.15':
     resolution: {integrity: sha512-eF2rxCRulEKXHTRiDrDy6erMYWqNw4LPdQ8UQA4huuxaQsVeRPFl2oM8oDGxMFhJUWZf9McpLtJasDDZb/Bpeg==}
 
-  '@jsr/yyhhenry__rust-result@0.2.4':
-    resolution: {integrity: sha512-q8d1cFQBlPukkbmJIaDp0ShGD1jE63u67j6NI2rhvxfX9gBg3tHib3XWvWmkA5JJbCBJa4dTTXIu/nou1oyehw==, tarball: https://npm.jsr.io/~/11/@jsr/yyhhenry__rust-result/0.2.4.tgz}
+  '@jsr/yyhhenry__rust-result@0.2.8':
+    resolution: {integrity: sha512-+EpixCrODnoaoITjL6/+iGeX3q7MqDlVdoDJ3JCwjTAmXcCgXProYphKAtjphYI1bXxlJM6YRpmWJfNV2XWfVQ==, tarball: https://npm.jsr.io/~/11/@jsr/yyhhenry__rust-result/0.2.8.tgz}
 
   '@nodelib/fs.scandir@2.1.5':
     resolution: {integrity: sha512-vq24Bq3ym5HEQm2NKCr3yXDwjc7vTsEThRDnkp2DK9p1uqLR+DHurm/NOTo0KG7HYHU7eppKZj3MyqYuMBf62g==}
@@ -456,8 +456,8 @@ packages:
   '@types/ms@0.7.34':
     resolution: {integrity: sha512-nG96G3Wp6acyAgJqGasjODb+acrI7KltPiRxzHPXnP3NgI28bpQDRv53olbqGXbfcgF5aiiHmO3xpwEpS5Ld9g==}
 
-  '@types/node@20.14.5':
-    resolution: {integrity: sha512-aoRR+fJkZT2l0aGOJhuA8frnCSoNX6W7U2mpNq63+BxBIj5BQFt8rHy627kijCmm63ijdSdwvGgpUsU6MBsZZA==}
+  '@types/node@20.14.6':
+    resolution: {integrity: sha512-JbA0XIJPL1IiNnU7PFxDXyfAwcwVVrOoqyzzyQTyMeVhBzkJVMSkC1LlVsRQ2lpqiY4n6Bb9oCS6lzDKVQxbZw==}
 
   '@types/semver@7.5.8':
     resolution: {integrity: sha512-I8EUhyrgfLrcTkzV3TSsGyl1tSuPrEDzr0yd5m90UgNxQkyDXULk3b6MlQqTCpZpNtWe1K0hzclnZkTcLBe2UQ==}
@@ -1808,7 +1808,7 @@ snapshots:
 
   '@jridgewell/sourcemap-codec@1.4.15': {}
 
-  '@jsr/yyhhenry__rust-result@0.2.4': {}
+  '@jsr/yyhhenry__rust-result@0.2.8': {}
 
   '@nodelib/fs.scandir@2.1.5':
     dependencies:
@@ -1915,7 +1915,7 @@ snapshots:
 
   '@types/ms@0.7.34': {}
 
-  '@types/node@20.14.5':
+  '@types/node@20.14.6':
     dependencies:
       undici-types: 5.26.5
 
@@ -2017,9 +2017,9 @@ snapshots:
 
   '@ungap/structured-clone@1.2.0': {}
 
-  '@vitejs/plugin-vue@5.0.5(vite@5.3.1(@types/node@20.14.5))(vue@3.4.29(typescript@5.3.3))':
+  '@vitejs/plugin-vue@5.0.5(vite@5.3.1(@types/node@20.14.6))(vue@3.4.29(typescript@5.3.3))':
     dependencies:
-      vite: 5.3.1(@types/node@20.14.5)
+      vite: 5.3.1(@types/node@20.14.6)
       vue: 3.4.29(typescript@5.3.3)
 
   '@volar/language-core@2.3.0':
@@ -3227,17 +3227,17 @@ snapshots:
       kleur: 4.1.5
       sade: 1.8.1
 
-  vite-plugin-wasm@3.3.0(vite@5.3.1(@types/node@20.14.5)):
+  vite-plugin-wasm@3.3.0(vite@5.3.1(@types/node@20.14.6)):
     dependencies:
-      vite: 5.3.1(@types/node@20.14.5)
+      vite: 5.3.1(@types/node@20.14.6)
 
-  vite@5.3.1(@types/node@20.14.5):
+  vite@5.3.1(@types/node@20.14.6):
     dependencies:
       esbuild: 0.21.5
       postcss: 8.4.38
       rollup: 4.18.0
     optionalDependencies:
-      '@types/node': 20.14.5
+      '@types/node': 20.14.6
       fsevents: 2.3.3
 
   vscode-uri@3.0.8: {}
