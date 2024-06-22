@@ -60,7 +60,8 @@ const copy = async () => {
   padding: 15px;
   border-radius: 15px;
   margin: 5px;
-  background-color: black;
+  color: var(--el-text-color-primary);
+  background-color: var(--el-bg-color-page);
   white-space: pre-wrap;
   word-wrap: break-word;
   overflow-wrap: break-word;
