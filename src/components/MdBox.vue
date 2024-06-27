@@ -38,13 +38,7 @@ const copy = async () => {
   <FlexBox>
     <HeaderText>
       <slot v-if="slots.header" name="header"></slot>
-      <ElButton
-        v-if="copyable"
-        :style="{ margin: '5px' }"
-        :icon="CopyDocument"
-        @click="copy"
-        circle
-      ></ElButton>
+      <ElButton v-if="copyable" :style="{ margin: '5px' }" :icon="CopyDocument" @click="copy" circle></ElButton>
     </HeaderText>
     <div :id="id" :innerHTML="mdHtml" :class="'markdown-html'"></div>
   </FlexBox>
@@ -56,6 +50,7 @@ const copy = async () => {
   display: flex;
   justify-content: center;
 }
+
 .markdown-html pre {
   padding: 15px;
   border-radius: 15px;
