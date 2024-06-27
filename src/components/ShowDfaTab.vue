@@ -42,22 +42,11 @@ const view = computed(() => {
 </script>
 <template>
   <FlexBox>
-    <ElInput
-      v-model="dfaInput"
-      placeholder="Enter DFA JSON"
-      type="textarea"
-      autosize
-    />
+    <ElInput v-model="dfaInput" placeholder="Enter DFA JSON" type="textarea" autosize />
   </FlexBox>
   <FlexBox>
-    <ElInput
-      v-model="strInput"
-      :size="'large'"
-      placeholder="Enter string to test"
-      :prefix-icon="view.accepted ? Select : Close"
-      :style="{ fontSize: '2em' }"
-      :input-style="{ fontSize: '0.5em' }"
-    >
+    <ElInput v-model="strInput" :size="'large'" placeholder="Enter string to test"
+      :prefix-icon="view.accepted ? Select : Close" :style="{ fontSize: '2em' }" :input-style="{ fontSize: '0.5em' }">
     </ElInput>
   </FlexBox>
   <ExamplesBox @put="putRegExample"></ExamplesBox>
