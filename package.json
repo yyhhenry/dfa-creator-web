@@ -17,7 +17,7 @@
     "@types/markdown-it": "^13.0.8",
     "@vueuse/core": "^10.11.0",
     "@yyhhenry/element-extra": "~0.3.0",
-    "@yyhhenry/rust-result": "npm:@jsr/yyhhenry__rust-result@^0.2.8",
+    "@yyhhenry/rust-result": "^0.3.1",
     "dfa-creator": "~0.4.1",
     "element-plus": "^2.7.5",
     "highlight.js": "^11.9.0",
