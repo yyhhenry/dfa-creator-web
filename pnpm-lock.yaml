@@ -21,8 +21,8 @@ importers:
         specifier: ~0.3.0
         version: 0.3.0(@element-plus/icons-vue@2.3.1(vue@3.4.29(typescript@5.3.3)))(@vueuse/core@10.11.0(vue@3.4.29(typescript@5.3.3)))(element-plus@2.7.5(vue@3.4.29(typescript@5.3.3)))(vue@3.4.29(typescript@5.3.3))
       '@yyhhenry/rust-result':
-        specifier: npm:@jsr/yyhhenry__rust-result@^0.2.8
-        version: '@jsr/yyhhenry__rust-result@0.2.8'
+        specifier: ^0.3.1
+        version: 0.3.1
       dfa-creator:
         specifier: ~0.4.1
         version: 0.4.1
@@ -305,9 +305,6 @@ packages:
 
   '@jridgewell/sourcemap-codec@1.4.15':
     resolution: {integrity: sha512-eF2rxCRulEKXHTRiDrDy6erMYWqNw4LPdQ8UQA4huuxaQsVeRPFl2oM8oDGxMFhJUWZf9McpLtJasDDZb/Bpeg==}
-
-  '@jsr/yyhhenry__rust-result@0.2.8':
-    resolution: {integrity: sha512-+EpixCrODnoaoITjL6/+iGeX3q7MqDlVdoDJ3JCwjTAmXcCgXProYphKAtjphYI1bXxlJM6YRpmWJfNV2XWfVQ==, tarball: https://npm.jsr.io/~/11/@jsr/yyhhenry__rust-result/0.2.8.tgz}
 
   '@nodelib/fs.scandir@2.1.5':
     resolution: {integrity: sha512-vq24Bq3ym5HEQm2NKCr3yXDwjc7vTsEThRDnkp2DK9p1uqLR+DHurm/NOTo0KG7HYHU7eppKZj3MyqYuMBf62g==}
@@ -630,6 +627,9 @@ packages:
       '@vueuse/core': ^10.9.0
       element-plus: ^2.6.3
       vue: ^3.4.21
+
+  '@yyhhenry/rust-result@0.3.1':
+    resolution: {integrity: sha512-6jXXZR0+L1qXII7Rcwu7P0xmxIKDnDmq8k6n9cc4GEjKHtYdiP4Yj6QDVhy24remN5shyWq2SRNGp4LUcqokRg==}
 
   acorn-jsx@5.3.2:
     resolution: {integrity: sha512-rq9s+JNhf0IChjtDXxllJ7g41oZk5SlXtp0LHwyA5cejwn7vKmKp4pPri6YEePv2PU65sAsegbXtIinmDFDXgQ==}
@@ -1805,8 +1805,6 @@ snapshots:
 
   '@jridgewell/sourcemap-codec@1.4.15': {}
 
-  '@jsr/yyhhenry__rust-result@0.2.8': {}
-
   '@nodelib/fs.scandir@2.1.5':
     dependencies:
       '@nodelib/fs.stat': 2.0.5
@@ -2166,6 +2164,8 @@ snapshots:
       '@vueuse/core': 10.11.0(vue@3.4.29(typescript@5.3.3))
       element-plus: 2.7.5(vue@3.4.29(typescript@5.3.3))
       vue: 3.4.29(typescript@5.3.3)
+
+  '@yyhhenry/rust-result@0.3.1': {}
 
   acorn-jsx@5.3.2(acorn@8.12.0):
     dependencies:
