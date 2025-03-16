@@ -1,14 +1,13 @@
 <script setup lang="ts">
 import { computed } from 'vue';
-import { ElInput } from 'element-plus';
-import { refThrottled, useStorage } from '@vueuse/core';
-import MdGroup from './MdGroup.vue';
+import { refDebounced, useStorage } from '@vueuse/core';
 import ExamplesBox from './ExamplesBox.vue';
 import { minimizeDfa, regexToDfa } from 'dfa-creator';
 import { safeDfaFromJson } from '@/utils/safe-dfac';
+import ViewMapView from './ViewMapView.vue';
 
 const input = useStorage('dfac-min', '');
-const dfaJson = refThrottled(input, 500);
+const dfaJson = refDebounced(input, 500);
 const putRegExample = (reg: string) => {
   input.value = JSON.stringify(regexToDfa(reg));
 };
@@ -25,12 +24,12 @@ const view = computed(() => {
   const dfa = safeDfaFromJson(dfaJson.value).map(minimizeDfa);
   return dfa.match<ViewMap>(
     ({ minDfa, markdown: md }) => ({ md, json: JSON.stringify(minDfa) }),
-    (e) => ({ err: e.message }),
+    (e) => ({ err: e.message })
   );
 });
 </script>
 <template>
-  <ElInput v-model="input" placeholder="Enter DFA JSON" type="textarea" autosize />
+  <v-text-field label="DFA JSON" v-model="input" clearable></v-text-field>
   <ExamplesBox @put="putRegExample"></ExamplesBox>
-  <MdGroup :view="view" />
+  <ViewMapView :view="view" />
 </template>

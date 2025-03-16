@@ -1,15 +1,14 @@
 <script setup lang="ts">
 import { safeNfaFromJson } from '@/utils/safe-dfac';
 import { computed } from 'vue';
-import { ElInput } from 'element-plus';
-import { refThrottled, useStorage } from '@vueuse/core';
-import { type ViewMap } from '@/utils/types';
-import MdGroup from './MdGroup.vue';
+import { refDebounced, useStorage } from '@vueuse/core';
+import { type ViewMap } from '@/utils/view-map-types';
 import ExamplesBox from './ExamplesBox.vue';
 import { nfaToDfa, regexToNfa } from 'dfa-creator';
+import ViewMapView from './ViewMapView.vue';
 
 const input = useStorage('dfac-n2d', '');
-const nfaJson = refThrottled(input, 500);
+const nfaJson = refDebounced(input, 500);
 const putRegExample = (reg: string) => {
   input.value = JSON.stringify(regexToNfa(reg));
 };
@@ -20,12 +19,12 @@ const view = computed(() => {
   const dfa = safeNfaFromJson(nfaJson.value).map(nfaToDfa);
   return dfa.match<ViewMap>(
     ({ dfa, markdown: md }) => ({ md, json: JSON.stringify(dfa) }),
-    (e) => ({ err: e.message }),
+    (e) => ({ err: e.message })
   );
 });
 </script>
 <template>
-  <ElInput v-model="input" placeholder="Enter NFA JSON" type="textarea" autosize />
+  <v-text-field label="NFA JSON" v-model="input" clearable></v-text-field>
   <ExamplesBox @put="putRegExample"></ExamplesBox>
-  <MdGroup :view="view" />
+  <ViewMapView :view="view" />
 </template>

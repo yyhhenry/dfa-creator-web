@@ -1,59 +1,78 @@
 <script setup lang="ts">
-import { PageLayout, FlexCard, FlexBox, SwitchDark, HeaderText } from '@yyhhenry/element-extra';
-import { websiteName } from '@/utils/website-name';
+import { z } from 'zod';
+import { useCheckedStorage } from './utils/storage';
+import { theme } from './utils/theme';
+import GlobalSnackbar from './components/GlobalSnackbar.vue';
+import { ref } from 'vue';
 import RegexToNfaTab from './components/RegexToNfaTab.vue';
+import SettingsView from './components/SettingsView.vue';
+import AboutDialog from './components/AboutDialog.vue';
 import NfaToDfaTab from './components/NfaToDfaTab.vue';
 import MinDfaTab from './components/MinDfaTab.vue';
-import MdBox from './components/MdBox.vue';
-import { ElTabPane, ElTabs } from 'element-plus';
-import { useStorage } from '@vueuse/core';
 import ShowDfaTab from './components/ShowDfaTab.vue';
 import ShowNfaTab from './components/ShowNfaTab.vue';
-const infoMd = `
-> **特别鸣谢：编译原理宋老师**
-
-Web tool to create and minimize DFA/NFA.
-
-Rust library [dfa-creator](https://github.com/yyhhenry/dfa-creator) (Binary release [dfac](https://github.com/yyhhenry/dfa-creator/releases/latest)).
-
-TypeScript library [dfa-creator](https://npmjs.com/package/dfa-creator).
-
-Web demo [DFA Creator](https://dfac.pages.dev/) (Source [dfa-creator-web](https://github.com/yyhhenry/dfa-creator-web)).
-`.trimStart();
-const tab = useStorage('dfac-tab', '0');
+const settingsDrawer = ref(false);
+const DTabValue = z.enum([
+  'reg2nfa',
+  'nfa2dfa',
+  'min-dfa',
+  'show-dfa',
+  'show-nfa',
+]);
+const tab = useCheckedStorage('dfac-tab', DTabValue, 'reg2nfa');
 </script>
 <template>
-  <PageLayout>
-    <template #header> {{ websiteName }} </template>
-    <template #header-extra>
-      <SwitchDark />
-    </template>
-    <FlexCard>
-      <template #header>
-        <HeaderText>Info</HeaderText>
-      </template>
-      <MdBox :content="infoMd"> </MdBox>
-    </FlexCard>
-    <FlexBox>
-      <ElTabs type="border-card" v-model="tab">
-        <ElTabPane label="Regex -> NFA" lazy>
-          <RegexToNfaTab />
-        </ElTabPane>
-        <ElTabPane label="NFA -> DFA" lazy>
-          <NfaToDfaTab />
-        </ElTabPane>
-        <ElTabPane label="Minimize DFA" lazy>
-          <MinDfaTab />
-        </ElTabPane>
-        <ElTabPane label="Show DFA" lazy>
-          <ShowDfaTab />
-        </ElTabPane>
-        <ElTabPane label="Show NFA" lazy>
-          <ShowNfaTab />
-        </ElTabPane>
-      </ElTabs>
-    </FlexBox>
-    <!-- Extra Scroll -->
-    <div style="height: 40vh"></div>
-  </PageLayout>
+  <v-app :theme="theme">
+    <global-snackbar />
+    <v-app-bar title="DFA Creator">
+      <template #append>
+        <AboutDialog />
+        <v-btn
+          icon="mdi-cog"
+          round
+          @click="() => (settingsDrawer = !settingsDrawer)"
+          title="Settings"
+      /></template>
+    </v-app-bar>
+    <v-navigation-drawer
+      :width="400"
+      v-model="settingsDrawer"
+      :location="'right'"
+      temporary
+    >
+      <SettingsView />
+    </v-navigation-drawer>
+    <v-main>
+      <v-container>
+        <v-card>
+          <v-tabs v-model="tab">
+            <v-tab value="reg2nfa" class="text-body-1">Regex -> NFA</v-tab>
+            <v-tab value="nfa2dfa" class="text-body-1">NFA -> DFA</v-tab>
+            <v-tab value="min-dfa" class="text-body-1">Minimize DFA</v-tab>
+            <v-tab value="show-dfa" class="text-body-1">Show DFA</v-tab>
+            <v-tab value="show-nfa" class="text-body-1">Show NFA</v-tab>
+          </v-tabs>
+          <v-card-text>
+            <v-tabs-window v-model="tab">
+              <v-tabs-window-item value="reg2nfa">
+                <RegexToNfaTab />
+              </v-tabs-window-item>
+              <v-tabs-window-item value="nfa2dfa">
+                <NfaToDfaTab />
+              </v-tabs-window-item>
+              <v-tabs-window-item value="min-dfa">
+                <MinDfaTab />
+              </v-tabs-window-item>
+              <v-tabs-window-item value="show-dfa">
+                <ShowDfaTab />
+              </v-tabs-window-item>
+              <v-tabs-window-item value="show-nfa">
+                <ShowNfaTab />
+              </v-tabs-window-item>
+            </v-tabs-window>
+          </v-card-text>
+        </v-card>
+      </v-container>
+    </v-main>
+  </v-app>
 </template>
