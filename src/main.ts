@@ -1,13 +1,23 @@
-import '@yyhhenry/element-extra/dist/style.css';
+/**
+ * main.ts
+ *
+ * Bootstraps Vuetify and other plugins then mounts the App`
+ */
 
-import { createApp } from 'vue';
+// Plugins
+import { registerPlugins } from '@/plugins';
+
+// Components
 import App from './App.vue';
-import { useColorMode, useTitle } from '@vueuse/core';
-import { websiteName } from './utils/website-name';
+
+// Composables
+import { createApp } from 'vue';
 import mermaid from 'mermaid';
 
-useColorMode();
-useTitle(websiteName);
+const app = createApp(App);
+
 mermaid.initialize({ startOnLoad: false });
 
-createApp(App).mount('#app');
+registerPlugins(app);
+
+app.mount('#app');

@@ -1,54 +1,48 @@
 <script setup lang="ts">
 import { computed } from 'vue';
-import { ElInput } from 'element-plus';
-import { refThrottled, useStorage } from '@vueuse/core';
-import { type TestViewMap } from '@/utils/types';
-import { FlexBox } from '@yyhhenry/element-extra';
-import { Select, Close } from '@element-plus/icons-vue';
-import MdGroup from './MdGroup.vue';
+import { refDebounced, useStorage } from '@vueuse/core';
+import { type TestViewMap } from '@/utils/view-map-types';
 import ExamplesBox from './ExamplesBox.vue';
 import { dfaToMermaid, regexToMinDfa, testDfa } from 'dfa-creator';
 import { safeDfaFromJson } from '@/utils/safe-dfac';
 import { escapeStr } from '@/utils/escape';
+import ViewMapView from './ViewMapView.vue';
+import { Result } from 'neverthrow';
 
 const dfaInput = useStorage('dfac-show-dfa', '');
 const strInput = useStorage('dfac-show-dfa-str', '');
-const dfaJson = refThrottled(dfaInput, 500);
-const str = refThrottled(strInput, 500);
+const dfaJson = refDebounced(dfaInput, 500);
+const str = refDebounced(strInput, 500);
 const putRegExample = (reg: string) => {
   dfaInput.value = JSON.stringify(regexToMinDfa(reg));
 };
-const view = computed(() => {
+const view = computed<TestViewMap>(() => {
   if (dfaJson.value === '') {
     return {};
   }
-  const escaped = escapeStr(str.value);
-  if (escaped.isErr()) {
-    return { err: escaped.unwrapErr().message };
-  }
-  const dfa = safeDfaFromJson(dfaJson.value);
-  if (dfa.isErr()) {
-    return { err: dfa.unwrapErr().message };
-  }
-  const dfaV = dfa.unwrap();
-  return {
-    mermaid: {
-      title: 'DFA',
-      content: dfaToMermaid(dfaV),
-    },
-    accepted: testDfa(dfaV, escaped.unwrap()),
-  } satisfies TestViewMap;
+  return Result.combine([
+    escapeStr(str.value),
+    safeDfaFromJson(dfaJson.value),
+  ]).match(
+    ([escaped, nfa]) => ({
+      mermaid: {
+        title: 'NFA',
+        content: dfaToMermaid(nfa),
+      },
+      accepted: testDfa(nfa, escaped),
+    }),
+    (e) => ({ err: e.message })
+  );
 });
 </script>
 <template>
-  <FlexBox>
-    <ElInput v-model="dfaInput" placeholder="Enter DFA JSON" type="textarea" autosize />
-  </FlexBox>
-  <FlexBox>
-    <ElInput v-model="strInput" :size="'large'" placeholder="Enter string to test"
-      :prefix-icon="view.accepted ? Select : Close" :style="{ fontSize: '2em' }" :input-style="{ fontSize: '0.5em' }">
-    </ElInput>
-  </FlexBox>
+  <v-text-field label="DFA JSON" v-model="dfaInput" clearable></v-text-field>
+  <v-text-field
+    label="String To Test"
+    v-model="strInput"
+    :prepend-inner-icon="view.accepted ? 'mdi-check-all' : 'mdi-close-thick'"
+    clearable
+  ></v-text-field>
   <ExamplesBox @put="putRegExample"></ExamplesBox>
-  <MdGroup :view="view" />
+  <ViewMapView :view="view" />
 </template>

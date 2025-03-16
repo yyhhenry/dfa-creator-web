@@ -1,18 +1,20 @@
 <script setup lang="ts">
-import { ElButton } from 'element-plus';
-import { FlexBox, HeaderText } from '@yyhhenry/element-extra';
-import { regExamples } from '@/utils/examples';
 defineEmits<{
   (event: 'put', reg: string): void;
 }>();
+const regExamples = ['(a|b)*aab', '1(1010*|1(010)*1)*0', 'a((a|b)*|ab*a)*b'];
 </script>
 <template>
-  <FlexBox>
-    <HeaderText>
-      <span :style="{ marginRight: '20px' }">Examples</span>
-      <ElButton v-for="example in regExamples" :key="example" @click="$emit('put', example)" round>
-        {{ example }}
-      </ElButton>
-    </HeaderText>
-  </FlexBox>
+  <div class="d-flex align-center ga-3 pa-2">
+    <div class="text-h5 mx-2">Examples:</div>
+    <v-btn
+      class="text-body-1"
+      variant="outlined"
+      v-for="example in regExamples"
+      :key="example"
+      @click="$emit('put', example)"
+    >
+      {{ example }}
+    </v-btn>
+  </div>
 </template>
