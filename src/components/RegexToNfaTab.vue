@@ -6,8 +6,6 @@ import { type ViewMap } from '@/utils/view-map-types';
 import { nfaToMermaid } from 'dfa-creator';
 import { useCheckedStorage } from '@/utils/storage';
 import { z } from 'zod';
-import ExamplesBox from './ExamplesBox.vue';
-import ViewMapView from './ViewMapView.vue';
 
 const input = useCheckedStorage('dfac-r2n', z.string(), '');
 const regex = refDebounced(input, 500, { maxWait: 5000 });

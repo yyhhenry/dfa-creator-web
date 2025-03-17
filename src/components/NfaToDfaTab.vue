@@ -3,9 +3,7 @@ import { safeNfaFromJson } from '@/utils/safe-dfac';
 import { computed } from 'vue';
 import { refDebounced, useStorage } from '@vueuse/core';
 import { type ViewMap } from '@/utils/view-map-types';
-import ExamplesBox from './ExamplesBox.vue';
 import { nfaToDfa, regexToNfa } from 'dfa-creator';
-import ViewMapView from './ViewMapView.vue';
 
 const input = useStorage('dfac-n2d', '');
 const nfaJson = refDebounced(input, 500);

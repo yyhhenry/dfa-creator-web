@@ -2,15 +2,8 @@
 import { z } from 'zod';
 import { useCheckedStorage } from './utils/storage';
 import { theme } from './utils/theme';
-import GlobalSnackbar from './components/GlobalSnackbar.vue';
 import { ref } from 'vue';
-import RegexToNfaTab from './components/RegexToNfaTab.vue';
-import SettingsView from './components/SettingsView.vue';
-import AboutDialog from './components/AboutDialog.vue';
-import NfaToDfaTab from './components/NfaToDfaTab.vue';
-import MinDfaTab from './components/MinDfaTab.vue';
-import ShowDfaTab from './components/ShowDfaTab.vue';
-import ShowNfaTab from './components/ShowNfaTab.vue';
+
 const settingsDrawer = ref(false);
 const DTabValue = z.enum([
   'reg2nfa',
@@ -23,7 +16,7 @@ const tab = useCheckedStorage('dfac-tab', DTabValue, 'reg2nfa');
 </script>
 <template>
   <v-app :theme="theme">
-    <global-snackbar />
+    <GlobalSnackbar />
     <v-app-bar title="DFA Creator">
       <template #append>
         <AboutDialog />

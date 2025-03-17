@@ -1,14 +1,9 @@
 <script setup lang="ts">
 import { safeNfaFromJson } from '@/utils/safe-dfac';
 import { computed } from 'vue';
-
 import { refDebounced, useStorage } from '@vueuse/core';
-
-import ExamplesBox from './ExamplesBox.vue';
 import type { TestViewMap } from '@/utils/view-map-types';
 import { nfaToMermaid, regexToNfa, testNfa } from 'dfa-creator';
-
-import ViewMapView from './ViewMapView.vue';
 import { escapeStr } from '@/utils/escape';
 import { Result } from 'neverthrow';
 

@@ -1,10 +1,8 @@
 <script setup lang="ts">
 import { computed } from 'vue';
 import { refDebounced, useStorage } from '@vueuse/core';
-import ExamplesBox from './ExamplesBox.vue';
 import { minimizeDfa, regexToDfa } from 'dfa-creator';
 import { safeDfaFromJson } from '@/utils/safe-dfac';
-import ViewMapView from './ViewMapView.vue';
 
 const input = useStorage('dfac-min', '');
 const dfaJson = refDebounced(input, 500);

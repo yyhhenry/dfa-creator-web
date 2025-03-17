@@ -2,11 +2,9 @@
 import { computed } from 'vue';
 import { refDebounced, useStorage } from '@vueuse/core';
 import { type TestViewMap } from '@/utils/view-map-types';
-import ExamplesBox from './ExamplesBox.vue';
 import { dfaToMermaid, regexToMinDfa, testDfa } from 'dfa-creator';
 import { safeDfaFromJson } from '@/utils/safe-dfac';
 import { escapeStr } from '@/utils/escape';
-import ViewMapView from './ViewMapView.vue';
 import { Result } from 'neverthrow';
 
 const dfaInput = useStorage('dfac-show-dfa', '');

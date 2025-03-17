@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import { markedLex, markedParse } from '@/utils/markdown';
 import { computed } from 'vue';
-import CodeView from './CodeView.vue';
 
 const props = defineProps<{
   markdown: string;
