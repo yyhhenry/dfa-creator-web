@@ -2,6 +2,7 @@
 import { type ViewMap } from '@/utils/view-map-types';
 import CodeView from './CodeView.vue';
 import MarkedView from './MarkedView.vue';
+
 defineProps<{
   view: ViewMap;
 }>();

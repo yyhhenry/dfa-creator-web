@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { ref } from 'vue';
-import MarkedView from './MarkedView.vue';
+
 const aboutDialog = ref(false);
 const aboutMd = `
 > **特别鸣谢：编译原理宋老师**
