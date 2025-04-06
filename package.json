@@ -1,8 +1,9 @@
 {
   "name": "dfa-creator-web",
-  "private": true,
   "type": "module",
   "version": "0.1.0",
+  "license": "MIT",
+  "private": true,
   "description": "Web tool to create and minimize DFA/NFA.",
   "scripts": {
     "lint": "eslint --fix src/",
