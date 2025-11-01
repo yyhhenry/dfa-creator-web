@@ -34,6 +34,7 @@ const tokens = computed(() => markedLex(props.markdown));
 </template>
 
 <style>
+/* Not scoped to allow styling of child elements */
 .marked-view > * {
   margin: 0.5em 0;
 }
