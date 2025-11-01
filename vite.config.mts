@@ -40,13 +40,6 @@ export default defineConfig({
   server: {
     port: 3012,
   },
-  css: {
-    preprocessorOptions: {
-      sass: {
-        api: 'modern-compiler',
-      },
-    },
-  },
   build: {
     target: 'es2022',
   },

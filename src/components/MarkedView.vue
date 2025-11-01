@@ -33,28 +33,30 @@ const tokens = computed(() => markedLex(props.markdown));
   </div>
 </template>
 
-<style lang="scss">
-.marked-view {
-  & > * {
-    margin: 0.5em 0;
-  }
-  ol,
-  ul {
-    padding-left: 1.5em;
-  }
-  table {
-    border-collapse: collapse;
-    border-spacing: 0;
-    border-top: 1.5pt solid grey;
-    border-bottom: 1.5pt solid grey;
-    th,
-    td {
-      padding: 0.5em 1em;
-    }
-    th {
-      border-bottom: 1pt solid grey;
-      padding: 0.5em;
-    }
-  }
+<style>
+.marked-view > * {
+  margin: 0.5em 0;
+}
+
+.marked-view ol,
+.marked-view ul {
+  padding-left: 1.5em;
+}
+
+.marked-view table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  border-top: 1.5pt solid grey;
+  border-bottom: 1.5pt solid grey;
+}
+
+.marked-view table th,
+.marked-view table td {
+  padding: 0.5em 1em;
+}
+
+.marked-view table th {
+  border-bottom: 1pt solid grey;
+  padding: 0.5em;
 }
 </style>
